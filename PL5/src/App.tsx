@@ -3,7 +3,7 @@ import ClienteLista from "./pages/ClienteLista";
 import ClienteForm from "./pages/ClienteFormPage";
 import PetLista from "./pages/PetLista";
 import PetForm from "./pages/PetForm";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
