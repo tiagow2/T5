@@ -1,4 +1,3 @@
-// src/types/Pets.ts
 export interface Dono {
   id: number;
   nome: string;
@@ -7,10 +6,10 @@ export interface Dono {
 }
 
 export interface Pet {
-  id?: number;
+  id?: number; 
   nome: string;
-  tipo: string;
-  raca: string;
-  dono?: Dono;
-  genero: string;
+  especie: string;
+  raca?: string;
+  idade?: number; 
+  clienteId: number; 
 }
