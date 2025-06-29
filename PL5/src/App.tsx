@@ -11,6 +11,7 @@ import ProdutoLista from "./pages/ProdutoLista";
 import ProdutoForm from "./pages/ProdutoForm";
 import RelatorioTopClientes from "./pages/RelatorioTopClientes";
 import RelatorioMaisConsumidos from "./pages/RelatorioMaisConsumidos";
+import RelatorioTopClientesValor from "./pages/RelatorioTopClientesValor";
 
 
 function App() {
@@ -22,17 +23,15 @@ function App() {
         <Route path="/clientes" element={<ClienteLista />} />
         <Route path="/clientes/cadastro" element={<ClienteCadastro />} />
         <Route path="/clientes/editar/:id" element={<ClienteEdicao />} />
-
         <Route path="/pets" element={<PetLista />} />
-        <Route path="/pets/novo" element={<PetForm />} /> {/* Rota para o formulário de novo pet */}
+        <Route path="/pets/novo" element={<PetForm />} />
         <Route path="/pets/editar/:id" element={<PetForm />} />
-
         <Route path="/produtos" element={<ProdutoLista />} />
         <Route path="/produtos/cadastro" element={<ProdutoForm />} />
         <Route path="/produtos/editar/:id" element={<ProdutoForm />} />
-
         <Route path="/relatorios/top-clientes" element={<RelatorioTopClientes />} />
         <Route path="/relatorios/mais-consumidos" element={<RelatorioMaisConsumidos />} />
+        <Route path="/relatorios/top-clientes-valor" element={<RelatorioTopClientesValor />} />
       </Routes>
     </Router>
   );

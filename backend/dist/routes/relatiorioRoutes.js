@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const relatorioController = __importStar(require("../controllers/relatorioController"));
 const router = (0, express_1.Router)();
-// A rota deve ser exatamente esta:
 router.get('/top-clientes-quantidade', relatorioController.getTop10ClientesQuantidade);
 router.get('/itens-mais-consumidos', relatorioController.getItensMaisConsumidos);
+router.get('/top5-clientes-valor', relatorioController.getTop5ClientesValor);
 exports.default = router;

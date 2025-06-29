@@ -1,9 +1,6 @@
-// PL5/src/services/RelatorioService.ts
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8080/relatorios';
-
-// ... (interface TopCliente e função getTop10ClientesQuantidade)
 
 export interface TopCliente {
     id: number;
@@ -25,4 +22,14 @@ export const getTop10ClientesQuantidade = () => {
 
 export const getItensMaisConsumidos = () => {
     return axios.get<MaisConsumido[]>(`${API_URL}/itens-mais-consumidos`);
+};
+
+interface TopClienteValor {
+    id: number;
+    nome: string;
+    valorTotal: number;
+}
+
+export const getTop5ClientesValor = () => {
+    return axios.get<TopClienteValor[]>(`${API_URL}/top5-clientes-valor`);
 };

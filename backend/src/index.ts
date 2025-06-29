@@ -7,7 +7,6 @@ import consumoRoutes from "./routes/consumoRoutes";
 import petRoutes from "./routes/petRoutes";
 import relatorioRoutes from './routes/relatiorioRoutes';
 
-
 const app = express();
 const PORT = 8080;
 

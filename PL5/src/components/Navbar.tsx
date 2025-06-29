@@ -18,17 +18,19 @@ export default function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/pets">Pets</Link>
             </li>
-            <li className="nav-item"> {/* Novo link para Produtos */}
+            <li className="nav-item">
               <Link className="nav-link" to="/produtos">Produtos</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/relatorios/top-clientes" className="nav-link">Top Clientes (Qtd)</Link>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownRelatorios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Relatórios
+              </a>
+              <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownRelatorios">
+                <li><Link className="dropdown-item" to="/relatorios/top-clientes">Top 10 (Quantidade)</Link></li>
+                <li><Link className="dropdown-item" to="/relatorios/top-clientes-valor">Top 5 (Valor)</Link></li>
+                <li><Link className="dropdown-item" to="/relatorios/mais-consumidos">Itens Mais Consumidos</Link></li>
+              </ul>
             </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/relatorios/mais-consumidos">Mais Consumidos</Link>
-            </li>
-            {/* Adicionar links para Consumo e Relatórios aqui depois */}
           </ul>
         </div>
       </div>
