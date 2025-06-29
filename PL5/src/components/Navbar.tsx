@@ -21,6 +21,13 @@ export default function Navbar() {
             <li className="nav-item"> {/* Novo link para Produtos */}
               <Link className="nav-link" to="/produtos">Produtos</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/relatorios/top-clientes" className="nav-link">Top Clientes (Qtd)</Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/relatorios/mais-consumidos">Mais Consumidos</Link>
+            </li>
             {/* Adicionar links para Consumo e Relatórios aqui depois */}
           </ul>
         </div>

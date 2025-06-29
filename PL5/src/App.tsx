@@ -7,8 +7,11 @@ import PetLista from "./pages/PetLista";
 import PetForm from "./pages/PetForm";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import ProdutoLista from "./pages/ProdutoLista"; // <-- Importe
-import ProdutoForm from "./pages/ProdutoForm";   // <-- Importe
+import ProdutoLista from "./pages/ProdutoLista";
+import ProdutoForm from "./pages/ProdutoForm";
+import RelatorioTopClientes from "./pages/RelatorioTopClientes";
+import RelatorioMaisConsumidos from "./pages/RelatorioMaisConsumidos";
+
 
 function App() {
   return (
@@ -24,10 +27,12 @@ function App() {
         <Route path="/pets/novo" element={<PetForm />} /> {/* Rota para o formulário de novo pet */}
         <Route path="/pets/editar/:id" element={<PetForm />} />
 
-        {/* Novas Rotas de Produtos */}
         <Route path="/produtos" element={<ProdutoLista />} />
         <Route path="/produtos/cadastro" element={<ProdutoForm />} />
         <Route path="/produtos/editar/:id" element={<ProdutoForm />} />
+
+        <Route path="/relatorios/top-clientes" element={<RelatorioTopClientes />} />
+        <Route path="/relatorios/mais-consumidos" element={<RelatorioMaisConsumidos />} />
       </Routes>
     </Router>
   );

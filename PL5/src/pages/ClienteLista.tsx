@@ -49,9 +49,8 @@ export default function ClienteLista() {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nome</th>
-            <th>Email</th>
+            <br></br>
             <th>Telefone</th>
             <th>Ações</th>
           </tr>
@@ -63,7 +62,6 @@ export default function ClienteLista() {
               <td>{cliente.email}</td>
               <td>{cliente.telefone}</td>
               <td>
-                {/* CORREÇÃO: Link para a página de edição */}
                 <button
                   className="btn btn-info btn-sm me-2"
                   onClick={() => navigate(`/clientes/editar/${cliente.id}`)}

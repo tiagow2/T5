@@ -5,22 +5,21 @@ import clienteRoutes from "./routes/clienteRoutes";
 import produtoRoutes from "./routes/produtoRoutes";
 import consumoRoutes from "./routes/consumoRoutes";
 import petRoutes from "./routes/petRoutes";
+import relatorioRoutes from './routes/relatiorioRoutes';
+
 
 const app = express();
 const PORT = 8080;
 
 app.use(cors());
 app.use(express.json());
-
-// Rotas da API
 app.use("/clientes", clienteRoutes);
 app.use("/produtos", produtoRoutes);
 app.use("/consumos", consumoRoutes);
-app.use("/pets", petRoutes); // <-- NOVA LINHA
-
-// Rota de teste simples
+app.use("/pets", petRoutes); 
+app.use('/relatorios', relatorioRoutes);
 app.get("/", (req, res) => {
-  res.send("API C4P rodando! Acesse /clientes, /produtos, /consumos, /pets"); // <-- ATUALIZADO
+  res.send("API C4P rodando! Acesse /clientes, /produtos, /consumos, /pets"); 
 });
 
 app.listen(PORT, () => {
@@ -29,5 +28,5 @@ app.listen(PORT, () => {
   console.log(`- http://localhost:${PORT}/clientes`);
   console.log(`- http://localhost:${PORT}/produtos`);
   console.log(`- http://localhost:${PORT}/consumos`);
-  console.log(`- http://localhost:${PORT}/pets`); // <-- NOVA LINHA
+  console.log(`- http://localhost:${PORT}/pets`); 
 });
