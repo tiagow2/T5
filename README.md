@@ -6,7 +6,8 @@ Este projeto foi desenvolvido e testado com a versão v16.x do Node.js. Ele util
 
 Para verificar a sua versão atual, execute o seguinte comando no terminal:
 
-node -v
+node -v:
+<br></br>
 Se a sua versão for diferente de v16.x, recomendamos fortemente o uso do nvm (Node Version Manager) para gerenciar suas versões do Node.js. Se você não o tem, instale-o primeiro.
 
 Com o nvm instalado, você pode instalar e usar a versão recomendada assim:
