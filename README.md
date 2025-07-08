@@ -1,50 +1,59 @@
-Requisitos:
-<br></br>
-Antes de instalar ou executar o projeto, é essencial verificar a versão do Node.js instalada na sua máquina.
+Projeto T5 (PL5)
+Este documento fornece todas as instruções necessárias para instalar e executar o projeto em seu ambiente de desenvolvimento local.
 
-Versão do Node.js:
-<br></br>
-Este projeto foi desenvolvido e testado com a versão v16.x do Node.js. Ele utiliza definições de tipo (@types/node@^16.18.126) específicas para essa versão. Utilizar versões incompatíveis (como Node 18 ou 20) pode causar erros durante a instalação ou execução.
+📋 Pré-requisitos Essenciais
+Antes de iniciar a instalação, é crucial garantir que você tenha a versão correta do Node.js instalada.
 
-Para verificar a sua versão atual, execute o seguinte comando no terminal:
+Versão do Node.js
+Este projeto foi desenvolvido e testado especificamente com a versão v16.x do Node.js. Ele depende de definições de tipo (@types/node@^16.18.126) que são compatíveis com essa versão.
 <br></br>
 
-node -v:
-<br></br>
-Se a sua versão for diferente de v16.x, recomendamos fortemente o uso do nvm (Node Version Manager) para gerenciar suas versões do Node.js. Se você não o tem, instale-o primeiro.
+🔴 Aviso: O uso de versões mais recentes do Node.js (como v18, v20 ou superiores) pode resultar em erros de incompatibilidade durante a instalação de dependências ou na execução do projeto.
 
-Com o nvm instalado, você pode instalar e usar a versão recomendada assim:
-<br></br>
+Como verificar sua versão do Node.js
+Execute o seguinte comando no seu terminal:
+
+node -v
+
+Como instalar e usar a versão correta (Recomendado)
+Se a sua versão não for a v16.x, a maneira mais fácil de gerenciar múltiplas versões do Node.js é utilizando o nvm (Node Version Manager).
+
+Instale o nvm (caso ainda não o tenha). Siga as instruções no repositório oficial do nvm.
+
+Instale e utilize a versão 16 do Node.js com os seguintes comandos:
+
 nvm install 16
+
 nvm use 16
-
-Instalação:
 <br></br>
-Siga os passos abaixo para configurar e rodar o projeto na sua máquina local:
 
-Clone o repositório:
-<br></br>
+🚀 Guia de Instalação e Execução:
+Siga os passos abaixo para configurar e rodar o projeto.
+
+Clone o Repositório:
+
 git clone https://github.com/tiagow2/T5.git
-<br></br>
-cd PL5
-<br></br>
-Instale as dependências:
-<br></br>
-Dentro do diretório do projeto, execute o comando para instalar todas as dependências necessárias:
-<br></br>
+Acesse o Diretório do Projeto:
+
+cd T5 
+(Observação: Corrigido de PL5 para T5, que é o nome padrão da pasta ao clonar o repositório)
+
+Instale as Dependências:
+Dentro do diretório do projeto, execute o comando abaixo. Ele fará o download de todas as bibliotecas listadas no arquivo package.json.
 
 npm install
-<br></br>
-Este comando lerá o arquivo package.json e fará o download de todas as bibliotecas e pacotes que o projeto precisa.
 
-Como Rodar o Projeto
-Com as dependências instaladas, você pode iniciar a aplicação em modo de desenvolvimento:
-<br></br>
+Rode o Projeto:
+Com as dependências instaladas, inicie a aplicação em modo de desenvolvimento:
 
 npm start
-<br></br>
-Este comando:
-Inicia o servidor de desenvolvimento.
-Abre automaticamente a aplicação no seu navegador padrão (geralmente em http://localhost:3000).
-Recarrega a página automaticamente sempre que você fizer alterações no código.
-Exibe quaisquer erros de lint diretamente no console.
+
+Este comando irá:
+
+Iniciar o servidor de desenvolvimento.
+
+Abrir a aplicação automaticamente no seu navegador padrão (geralmente em http://localhost:3000).
+
+Recarregar a página sempre que você salvar uma alteração no código.
+
+Exibir erros e avisos diretamente no terminal.
