@@ -1,92 +1,119 @@
-**Projeto T5 - Guia de Instalação Completo**
+# Projeto T5 - Guia de Instalação Completo
 
-Este documento fornece todas as instruções para configurar e executar o Frontend (React) e o Backend (Node.js/Express) em seu ambiente local.
+Este documento fornece as instruções detalhadas para configurar e executar o ambiente de desenvolvimento completo, que consiste em um **Frontend (React)** e um **Backend (Node.js/Express)**.
 
-📋 **Pré-requisitos Essenciais**
+## 📋 Pré-requisitos Essenciais
 
 Antes de começar, é fundamental preparar seu ambiente com as ferramentas corretas.
 
-**Múltiplas Versões do Node.js (Obratório)**
-   
+### Múltiplas Versões do Node.js (Obratório)
+
 O projeto exige duas versões diferentes do Node.js para funcionar corretamente:
+* **Frontend:** Requer a versão **v16.x**
+* **Backend:** Requer a versão **v20.x**
 
-* **Frontend: Requer a versão v16.x**
+🔴 **Aviso:** Utilizar a versão errada em qualquer uma das partes pode causar erros de incompatibilidade.
 
-* **Backend: Requer a versão v20.x**
+A maneira recomendada para gerenciar múltiplas versões é utilizando o **nvm (Node Version Manager)**. Caso ainda não o tenha, siga as instruções de instalação no [repositório oficial do nvm](https://github.com/nvm-sh/nvm).
 
-🔴 **Aviso: Utilizar a versão errada em qualquer uma das partes pode causar erros de incompatibilidade, mesmo que pareça funcionar inicialmente.**
+---
 
-A maneira recomendada para gerenciar múltiplas versões é utilizando o nvm (Node Version Manager).
+## 🚀 Guia de Instalação e Execução
 
-* **Passo A: Instale o NVM**
+Siga os passos abaixo na ordem correta. Você precisará de **dois terminais abertos** simultaneamente.
 
-  * Caso ainda não o tenha, siga as instruções de instalação no repositório oficial do nvm.
+### Passo 1: Preparação do Ambiente
 
-* **Passo B: Instale as versões do Node.js necessárias**
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/tiagow2/T5.git](https://github.com/tiagow2/T5.git)
+    cd T5
+    ```
 
-  * Abra seu terminal e execute os seguintes comandos para instalar ambas as versões:
+2.  **Instale as versões do Node.js (caso não as tenha):**
+    ```bash
+    nvm install 16
+    nvm install 20
+    ```
 
-        nvm install 16
+3.  **(Opcional, mas recomendado) Crie os arquivos `.nvmrc`:**
+    Isso fará com que o `nvm` selecione a versão correta do Node automaticamente para cada parte do projeto. Execute os dois comandos abaixo na raiz do projeto (`T5/`):
+    ```bash
+    echo "16" > .nvmrc
+    echo "20" > backend/.nvmrc
+    ```
 
-        nvm install 20
-<br></br>
-🚀 **Guia de Instalação e Execução**
+### Passo 2: Configure e Rode o Backend (Terminal 1)
 
-Siga os passos abaixo na ordem correta. Você precisará de dois terminais abertos simultaneamente.
+1.  **Acesse a pasta do backend:**
+    ```bash
+    cd backend 
+    ```
 
-**Passo 1: Clone o Repositório**
+2.  **Ative a versão correta do Node.js:**
+    * Se você criou o arquivo `.nvmrc` no passo anterior, basta rodar:
+        ```bash
+        nvm use
+        ```
+    * Caso contrário, execute manualmente:
+        ```bash
+        nvm use 20
+        ```
 
-Abra um terminal, navegue até o local onde deseja salvar o projeto, e execute:
+3.  **Instale as dependências do backend:**
+    ```bash
+    npm install
+    ```
 
-git clone https://github.com/tiagow2/T5.git
+4.  **Inicie o servidor em modo de desenvolvimento:**
+    * Este comando usa o `nodemon` para reiniciar o servidor automaticamente a cada alteração no código.
+        ```bash
+        npm run dev
+        ```
 
-**Passo 2: Configure e Rode o Backend**
+✅ **Sucesso!** O servidor backend agora está rodando. Deixe este terminal aberto.
 
-**No seu primeiro terminal:**
+### Passo 3: Configure e Rode o Frontend (Terminal 2)
 
-* **1. Acesse a pasta do backend:**
+1.  **Acesse a pasta raiz do projeto (em um novo terminal):**
+    ```bash
+    cd caminho/para/o/projeto/T5
+    ```
 
-         cd T5/backend 
+2.  **Ative a versão correta do Node.js:**
+    * Com o `.nvmrc` criado, basta rodar:
+        ```bash
+        nvm use
+        ```
+    * Caso contrário, execute manualmente:
+        ```bash
+        nvm use 16
+        ```
 
-(Ajuste o caminho se sua estrutura de pastas for diferente)
+3.  **Instale as dependências do frontend:**
+    ```bash
+    npm install
+    ```
 
-* **2. Ative a versão correta do Node.js:**
+4.  **Inicie a aplicação frontend:**
+    ```bash
+    npm start
+    ```
 
-         nvm use 20
+✅ **Sucesso!** Sua aplicação React será aberta no navegador e já estará pronta para se conectar ao backend.
 
-* **3. Instale as dependências do backend:**
+---
 
-         npm install
+### Para Rodar em Modo de Produção
 
-* **4. Build o servidor backend:**
+Se um dia você precisar fazer o deploy da aplicação, os comandos são diferentes. O modo de desenvolvimento (`npm run dev`) não é usado em produção.
 
-         npm run build
-
-* **5. Inicie o servidor backend:**
-
-         npm run dev
-
-✅ **Sucesso! O servidor backend agora está rodando em modo de desenvolvimento. Deixe este terminal aberto**
-<br></br>
-
-**Passo 3: Configure e Rode o Frontend**
-
-Abra um novo terminal (o segundo):
-
-* **1. Acesse a pasta raiz do projeto:**
-
-         cd T5
-
-* **2. Ative a versão correta do Node.js:**
-
-      nvm use 16
-
-* **3. Instale as dependências do frontend:**
-
-      npm install
-
-* **4. Inicie a aplicação frontend:**
-
-      npm start
-
-✅**Sucesso! Sua aplicação React será aberta no navegador e já estará conectada ao backend.**
+* **Para o backend:**
+    1.  Gere os arquivos JavaScript otimizados:
+        ```bash
+        npm run build
+        ```
+    2.  Inicie o servidor a partir dos arquivos gerados:
+        ```bash
+        npm start
+        ```
