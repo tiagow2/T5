@@ -58,7 +58,11 @@ git clone https://github.com/tiagow2/T5.git
 
          npm install
 
-* **4. Inicie o servidor backend:**
+* **4. Build o servidor backend:**
+
+         npm run build
+
+* **5. Inicie o servidor backend:**
 
          npm run dev
 
