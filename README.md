@@ -1,59 +1,88 @@
-Projeto T5 (PL5)
-Este documento fornece todas as instruções necessárias para instalar e executar o projeto em seu ambiente de desenvolvimento local.
+**Projeto T5 - Guia de Instalação Completo**
 
-📋 Pré-requisitos Essenciais
-Antes de iniciar a instalação, é crucial garantir que você tenha a versão correta do Node.js instalada.
+Este documento fornece todas as instruções para configurar e executar o Frontend (React) e o Backend (Node.js/Express) em seu ambiente local.
 
-Versão do Node.js
-Este projeto foi desenvolvido e testado especificamente com a versão v16.x do Node.js. Ele depende de definições de tipo (@types/node@^16.18.126) que são compatíveis com essa versão.
+📋 **Pré-requisitos Essenciais**
+
+Antes de começar, é fundamental preparar seu ambiente com as ferramentas corretas.
+
+**Múltiplas Versões do Node.js (Obratório)**
+   
+O projeto exige duas versões diferentes do Node.js para funcionar corretamente:
+
+* **Frontend: Requer a versão v16.x**
+
+* **Backend: Requer a versão v20.x**
+
+🔴 **Aviso: Utilizar a versão errada em qualquer uma das partes pode causar erros de incompatibilidade, mesmo que pareça funcionar inicialmente.**
+
+A maneira recomendada para gerenciar múltiplas versões é utilizando o nvm (Node Version Manager).
+
+* **Passo A: Instale o NVM**
+
+  * Caso ainda não o tenha, siga as instruções de instalação no repositório oficial do nvm.
+
+* **Passo B: Instale as versões do Node.js necessárias**
+
+  * Abra seu terminal e execute os seguintes comandos para instalar ambas as versões:
+
+        nvm install 16
+
+        nvm install 20
 <br></br>
+🚀 **Guia de Instalação e Execução**
 
-🔴 Aviso: O uso de versões mais recentes do Node.js (como v18, v20 ou superiores) pode resultar em erros de incompatibilidade durante a instalação de dependências ou na execução do projeto.
+Siga os passos abaixo na ordem correta. Você precisará de dois terminais abertos simultaneamente.
 
-Como verificar sua versão do Node.js
-Execute o seguinte comando no seu terminal:
+**Passo 1: Clone o Repositório**
 
-node -v
-
-Como instalar e usar a versão correta (Recomendado)
-Se a sua versão não for a v16.x, a maneira mais fácil de gerenciar múltiplas versões do Node.js é utilizando o nvm (Node Version Manager).
-
-Instale o nvm (caso ainda não o tenha). Siga as instruções no repositório oficial do nvm.
-
-Instale e utilize a versão 16 do Node.js com os seguintes comandos:
-
-nvm install 16
-
-nvm use 16
-<br></br>
-
-🚀 Guia de Instalação e Execução:
-Siga os passos abaixo para configurar e rodar o projeto.
-
-Clone o Repositório:
+Abra um terminal, navegue até o local onde deseja salvar o projeto, e execute:
 
 git clone https://github.com/tiagow2/T5.git
-Acesse o Diretório do Projeto:
 
-cd T5 
-(Observação: Corrigido de PL5 para T5, que é o nome padrão da pasta ao clonar o repositório)
+**Passo 2: Configure e Rode o Backend**
 
-Instale as Dependências:
-Dentro do diretório do projeto, execute o comando abaixo. Ele fará o download de todas as bibliotecas listadas no arquivo package.json.
+**No seu primeiro terminal:**
 
-npm install
+* **1. Acesse a pasta do backend:**
 
-Rode o Projeto:
-Com as dependências instaladas, inicie a aplicação em modo de desenvolvimento:
+         cd T5/backend 
 
-npm start
+(Ajuste o caminho se sua estrutura de pastas for diferente)
 
-Este comando irá:
+* **2. Ative a versão correta do Node.js:**
 
-Iniciar o servidor de desenvolvimento.
+         nvm use 20
 
-Abrir a aplicação automaticamente no seu navegador padrão (geralmente em http://localhost:3000).
+* **3. Instale as dependências do backend:**
 
-Recarregar a página sempre que você salvar uma alteração no código.
+         npm install
 
-Exibir erros e avisos diretamente no terminal.
+* **4. Inicie o servidor backend:**
+
+         npm run dev
+
+✅ **Sucesso! O servidor backend agora está rodando em modo de desenvolvimento. Deixe este terminal aberto**
+<br></br>
+
+**Passo 3: Configure e Rode o Frontend**
+
+Abra um novo terminal (o segundo):
+
+* **1. Acesse a pasta raiz do projeto:**
+
+         cd T5
+
+* **2. Ative a versão correta do Node.js:**
+
+      nvm use 16
+
+* **3. Instale as dependências do frontend:**
+
+      npm install
+
+* **4. Inicie a aplicação frontend:**
+
+      npm start
+
+✅**Sucesso! Sua aplicação React será aberta no navegador e já estará conectada ao backend.**
